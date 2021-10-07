@@ -6,11 +6,12 @@ namespace ConsoleUI
     {
         public static void WelcomeMessage() 
         {
-            Console.WriteLine("Welcome to my application");
+            Console.WriteLine("Welcome to my application\n\n");
         }
 
         public static void EndApplication()
         {
+            Console.WriteLine("\n\nPress 'Enter' to close...");
             Console.ReadLine();
         }
 
