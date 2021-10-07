@@ -1,12 +1,8 @@
 ﻿namespace ConsoleUI
 {
-    internal class Person
+    public class Person
     {
-        public Person()
-        {
-        }
-
-        public string FirstName { get; internal set; }
-        public string LastName { get; internal set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }

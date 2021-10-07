@@ -10,16 +10,22 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to my application");
+            StandardMessages.WelcomeMessage();
 
-            //ask for user information
-            Person user = new Person();
+            Person user = PersonDataCapture.Capture();
 
-            Console.Write("What is your first name: ");
-            user.FirstName = Console.ReadLine();
+            bool isUserValid = PersonValidator.Validate(user);
+            
+            if (isUserValid == false)
+            {
+                StandardMessages.EndApplication();
 
-            Console.Write("What is your last name: ");
-            user.LastName = Console.ReadLine();
+                return;
+            }
+
+            AccountGenerator.CreateAccount(user);
+
+            StandardMessages.EndApplication();
         }
     }
 }
